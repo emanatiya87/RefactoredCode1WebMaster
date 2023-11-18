@@ -1,0 +1,12 @@
+h1{
+text-align: center;
+color: rgb(44, 33, 33);
+background-color: red;
+
+}
+body{
+    background-color: grey;
+}
+legend{
+    color: green;
+}
