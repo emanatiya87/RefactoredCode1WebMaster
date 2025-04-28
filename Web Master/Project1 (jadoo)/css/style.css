@@ -1,0 +1,588 @@
+:root {
+  --primaryColor: #df6951;
+  --secondaryColor: #f1a501;
+  --textColor: #5e6282;
+  --main: #181e4b;
+  --additionColor: #006380;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  width: 100%;
+}
+.container {
+  width: 85%;
+  margin: auto;
+}
+button {
+  cursor: pointer;
+}
+.image img {
+  width: 100%;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.justify-Content-Between {
+  justify-content: space-between;
+}
+.circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+.paragraph {
+  color: var(--textColor);
+  font-family: "Poppins", sans-serif;
+}
+section {
+  height: 100vh;
+}
+.title {
+  text-align: center;
+  padding: 70px 0;
+}
+.title h3 {
+  padding: 15px 0;
+}
+.title h2 {
+  font-size: 2rem;
+  font-family: "Volkhov", serif;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans-Regular.woff2") format("woff2"),
+    url("/fonts/GoogleSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Google Sans", sans-serif;
+  height: 2000px;
+}
+
+/* hero section */
+.hero {
+  width: 100vw;
+  background-image: url(../images/Decore.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+nav {
+  width: 70%;
+}
+.navItems {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navItems li {
+  list-style: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+.navItems li a {
+  text-decoration: none;
+  color: black;
+}
+.navItems li button {
+  padding: 7px 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+.changeLang {
+  position: relative;
+}
+.lang {
+  padding: 5px 0;
+  position: absolute;
+  border: 1px solid black;
+  width: 100%;
+  display: none;
+  text-align: center;
+}
+.changeLang:hover .lang {
+  display: block;
+}
+
+.heroContent {
+  width: 50%;
+}
+
+.heroContent h1 {
+  color: var(--main);
+  margin: 20px 0;
+  font-size: 4rem;
+}
+.heroContent h3 {
+  color: var(--primaryColor);
+}
+.hero .circle {
+  background-color: var(--primaryColor);
+  color: white;
+  margin-inline-end: 15px;
+  font-size: 1.1rem;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px var(--primaryColor);
+}
+.heroContent button,
+.subscribe button {
+  background-color: var(--secondaryColor);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  margin-inline-end: 20px;
+  font-size: 1.2rem;
+}
+.startsection {
+  height: 100dvh;
+  background: url(../images/Traveller\ 1.png) no-repeat;
+  background-position: right;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+}
+.heroContent > h1 ~ .paragraph {
+  margin: 20px 0;
+  line-height: 30px;
+}
+.navRes {
+  display: none;
+}
+.navRes:hover .navBox {
+  display: block;
+}
+.navRes button {
+  background-color: transparent;
+  padding: 7px;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navRes .line {
+  width: 30px;
+  height: 2px;
+  background-color: var(--secondaryColor);
+  margin: 3px;
+}
+.navRes .navBox {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.772);
+  display: none;
+}
+.navBox ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100%;
+  color: white;
+}
+.navBox ul a,
+.navBox ul button {
+  color: white;
+}
+.navItems li:hover {
+  border-bottom: 2px white solid;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cardCenter {
+  padding: 0 20px;
+  margin: 10px;
+  width: 220px;
+  height: 240px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cardCenter:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 30%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--primaryColor);
+  border-radius: 20px 0 5px 0;
+  z-index: -1;
+}
+.cardCenter:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.269);
+  background-color: white;
+}
+.cardCenter .cardCenterTop {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.cardCenter .cardCenterTop .cardIcon {
+  width: 60%;
+}
+.cardCenterContent h3 {
+  margin: 15px 0;
+}
+
+.cardCenterContent {
+  text-align: center;
+}
+/* distination */
+.flipCard {
+  margin: 10px 20px;
+  cursor: pointer;
+}
+.flipCard .front {
+  height: 400px;
+  width: 270px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.257);
+  overflow: hidden;
+}
+.flipCard .front .frontTop {
+  height: 70%;
+  width: 100%;
+}
+.flipCard .front .frontTop img {
+  height: 100%;
+  width: 100%;
+}
+.flipCard .front .frontContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 30%;
+  padding: 0 15px;
+  background-color: white;
+}
+.flipCard .front .frontContent .flex {
+  justify-content: space-between;
+  height: 30%;
+  width: 100%;
+}
+.flipCard .front .frontContent p i {
+  margin-inline-end: 15px;
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.lastFlipCard {
+  position: relative;
+}
+.lastFlipCard .FlipCardDecore {
+  position: absolute;
+  right: -60px;
+  bottom: 40px;
+  z-index: -1;
+}
+/* Steps Book */
+.bookSection {
+  justify-content: space-between;
+  height: 90%;
+  flex-wrap: wrap;
+}
+.bookStepsContent {
+  height: 100%;
+  width: 50%;
+}
+.bookStepsContent .title {
+  text-align: start;
+  padding-bottom: 0;
+}
+
+.stepsCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 75%;
+}
+.square {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: var(--secondaryColor);
+  color: white;
+  margin-inline-end: 20px;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.square2 {
+  background-color: var(--primaryColor);
+}
+.square3 {
+  background-color: var(--additionColor);
+}
+.leftIconeCardContent {
+  width: 70%;
+}
+.StepsCard {
+  padding: 20px;
+  width: 370px;
+  height: 400px;
+  border-radius: 25px;
+  box-shadow: 0px 0 15px rgba(0, 0, 0, 0.342);
+  box-shadow: 5px -10px 25px rgba(76, 109, 179, 0.434);
+}
+.StepsCardTop {
+  width: 100%;
+  height: 45%;
+}
+.StepsCardTop img {
+  width: 100%;
+  height: 100%;
+}
+.StepsCardContent {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 55%;
+  width: 100%;
+}
+
+.StepsCardContent .circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f5f5f5;
+  margin-inline-end: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #84829a;
+}
+.fav {
+  width: 100%;
+}
+.heart {
+  color: var(--main);
+  font-size: 1.4rem;
+}
+.partner {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.partner img:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.291);
+  border-radius: 10px;
+  padding: 10px;
+}
+/* reviews */
+.reviews {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.reviews .title {
+  text-align: start;
+}
+.reviews .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  margin-inline-end: 15px;
+  cursor: pointer;
+}
+.reviews .dotSelected,
+.dot:hover {
+  background-color: #39425d;
+}
+.reviewCards {
+  width: 50%;
+  position: relative;
+}
+.reviewCard {
+  width: 450px;
+  padding: 20px;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.339);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.reviewCard .circle {
+  background-image: url(../images/Image.png);
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.reviewCardBack {
+  border: 1px solid gray;
+  background-color: transparent;
+  position: absolute;
+  left: 50px;
+  bottom: -90px;
+  z-index: -1;
+  box-shadow: none;
+}
+.reviewCardsArrows {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.reviewCardsArrows i {
+  cursor: pointer;
+  padding-top: 30px;
+}
+.reviewCardsArrows i:hover {
+  color: var(--textColor);
+}
+/* subscribe */
+
+.subscribe {
+  background-color: #dfd7f984;
+  border-radius: 50px 0 25px 20px;
+  height: 60vh;
+  padding: 25px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+}
+.subscribe h2 {
+  color: var(--textColor);
+}
+.subscribe input {
+  background-color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+}
+form button {
+  background: linear-gradient(to bottom, #ff946d, #ff7d68);
+}
+form .inp {
+  position: relative;
+  color: #181e4b;
+  margin-inline-end: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+form .inp i {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+form {
+  flex-wrap: wrap;
+}
+.bottomDecore {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.topDecore {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+footer .container {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+footer h4 {
+  padding: 20px 0;
+}
+footer h3 {
+  padding: 20px 0;
+}
+footer .circle {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.472);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-end: 10px;
+  font-size: 1.2rem;
+}
+.instgram {
+  background: conic-gradient(
+    #c963e8,
+    #bfc2e8,
+    #ffc999,
+    #d0d8c9,
+    #bad0f1,
+    #ced8cb,
+    #ffffff00,
+    #b8d2f1,
+    #f289aa,
+    #c68bf0,
+    #d164da
+  );
+}
+footer h5 span {
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+footer .store {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+footer .store i {
+  font-size: 1.3rem;
+  padding-inline-end: 10px;
+}
+footer .mainFooter {
+  width: 30%;
+}
+footer .copyRight {
+  text-align: center;
+  padding: 20px 0;
+}
