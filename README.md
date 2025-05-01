@@ -4,7 +4,7 @@ A refactored website with responsive design and enhanced accessibility features,
 
 ## Table of Contents
 1. [Features](#features)
-2. [Installation](#installation)
+2. [Deployment](#Deployment)
 3. [Usage](#usage)
 
 ## Features
