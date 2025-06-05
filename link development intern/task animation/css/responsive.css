@@ -1,0 +1,22 @@
+@media screen and (max-width: 800px) {
+  .home .container h1 {
+    font-size: 2rem;
+  }
+  .mainNav {
+    display: none;
+  }
+  .col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image {
+    width: auto;
+  }
+  .grid {
+    grid-template-areas:
+      "first second "
+      "first second "
+      "Third Third"
+      "Fourth Fourth";
+  }
+}
