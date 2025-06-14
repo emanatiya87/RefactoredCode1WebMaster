@@ -9,10 +9,36 @@ let form = document.forms[0];
 form.onsubmit = function (e) {
   e.preventDefault();
   let nameValue = name.value;
+  let messageValue = message.value;
+
   name.value = "";
   message.value = "";
-  thanks.innerHTML = `Thanks <span>${nameValue}</span> for your message , We will contact you as soon as possible!`;
+
+  fetch("https://formspree.io/f/xpwrrpay", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: nameValue,
+      message: messageValue,
+      _redirect: "false", // prevent CORS redirect
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Form not submitted");
+      return response.json();
+    })
+    .then((res) => {
+      console.log(res);
+      thanks.innerHTML = `Thanks <span>${nameValue}</span> for your message, we will contact you soon!`;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      thanks.innerHTML = "There was a problem sending your message.";
+    });
 };
+
 // up btn
 window.onscroll = function () {
   if (window.scrollY >= 90) {
